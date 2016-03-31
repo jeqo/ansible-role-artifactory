@@ -1,7 +1,7 @@
 ---
 #
 - get_url:
-    src: https://api.bintray.com/content/jfrog/artifactory-rpms/jfrog-artifactory-oss-$latest.rpm;bt_package=jfrog-artifactory-oss-rpm
+    url: https://api.bintray.com/content/jfrog/artifactory-rpms/jfrog-artifactory-oss-$latest.rpm;bt_package=jfrog-artifactory-oss-rpm
     dest: /tmp/jfrog-artifactory-oss.rpm
 - yum:
     name: /tmp/jfrog-artifactory-oss.rpm
