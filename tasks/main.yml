@@ -1,2 +1,4 @@
 ---
 # tasks file for artifactory
+- include: "install-{{ ansible_os_family }}.yml"
+  become: yes
