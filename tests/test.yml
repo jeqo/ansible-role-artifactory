@@ -1,0 +1,11 @@
+---
+# test units
+- name: test install artifactory on centos 7 with openjdk jdk 8
+  hosts: test01
+  roles:
+    - role: artifactory
+
+- name: test install artifactory on ubuntu14 with openjdk jdk 8
+  hosts: test02
+  roles:
+    - role: artifactory
