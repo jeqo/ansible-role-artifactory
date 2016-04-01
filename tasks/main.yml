@@ -2,3 +2,9 @@
 # tasks file for artifactory
 - include: "install-{{ ansible_os_family }}.yml"
   become: yes
+
+- service:
+    name: httpd
+    state: started
+    enabled: yes
+  become: yes
