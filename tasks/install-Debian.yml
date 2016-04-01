@@ -1,13 +1,13 @@
 ---
 #
 
-- get_url:
-    url: https://api.bintray.com/content/jfrog/artifactory/jfrog-artifactory-oss-$latest.zip;bt_package=jfrog-artifactory-oss-zip
-    dest: /tmp/jfrog-artifactory-oss.zip
+#- get_url:
+#    url: https://api.bintray.com/content/jfrog/artifactory/jfrog-artifactory-oss-$latest.zip;bt_package=jfrog-artifactory-oss-zip
+#    dest: /tmp/jfrog-artifactory-oss.zip
 
 - unarchive:
     src: https://api.bintray.com/content/jfrog/artifactory/jfrog-artifactory-oss-$latest.zip;bt_package=jfrog-artifactory-oss-zip
-    dest: /tmp/jfrog-artifactory-oss
+    dest: /tmp
     copy: no
 
 - file:
