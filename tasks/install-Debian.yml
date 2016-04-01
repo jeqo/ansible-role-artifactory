@@ -5,6 +5,12 @@
 #    url: https://api.bintray.com/content/jfrog/artifactory/jfrog-artifactory-oss-$latest.zip;bt_package=jfrog-artifactory-oss-zip
 #    dest: /tmp/jfrog-artifactory-oss.zip
 
+- package:
+    name: "{{ item }}"
+  with_items:
+    - unzip
+    - tar
+
 - unarchive:
     src: https://api.bintray.com/content/jfrog/artifactory/jfrog-artifactory-oss-$latest.zip;bt_package=jfrog-artifactory-oss-zip
     dest: /tmp
