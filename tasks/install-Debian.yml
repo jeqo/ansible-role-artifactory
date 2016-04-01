@@ -1,7 +1,18 @@
 ---
 #
-- apt_key: keyserver=pgpkeys.mit.edu/ id=6B219DCCD7639232
 
-- apt:
-    name: jfrog-artifactory-oss
-    state: present
+- get_url:
+    url: https://api.bintray.com/content/jfrog/artifactory/jfrog-artifactory-oss-$latest.zip;bt_package=jfrog-artifactory-oss-zip
+    dest: /tmp/jfrog-artifactory-oss.zip
+
+- unarchive:
+    src: https://api.bintray.com/content/jfrog/artifactory/jfrog-artifactory-oss-$latest.zip;bt_package=jfrog-artifactory-oss-zip
+    dest: /tmp/jfrog-artifactory-oss
+    copy: no
+
+- file:
+    path: /tmp/jfrog-artifactory-oss/install.sh
+    state: touch
+    mode: "u=+x"
+
+- command: /tmp/jfrog-artifactory-oss/install.sh
