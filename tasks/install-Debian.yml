@@ -1,9 +1,11 @@
 ---
 #
+- group:
+    name: artifactory
 
-#- get_url:
-#    url: https://api.bintray.com/content/jfrog/artifactory/jfrog-artifactory-oss-$latest.zip;bt_package=jfrog-artifactory-oss-zip
-#    dest: /tmp/jfrog-artifactory-oss.zip
+- user:
+    name: artifactory
+    group: artifactory
 
 - package:
     name: "{{ item }}"
@@ -11,14 +13,20 @@
     - unzip
     - tar
 
+- file:
+    path: /opt/artifactory
+    state: directory
+    owner: artifactory
+    group: artifactory
+
 - unarchive:
     src: https://api.bintray.com/content/jfrog/artifactory/jfrog-artifactory-oss-$latest.zip;bt_package=jfrog-artifactory-oss-zip
-    dest: /tmp
+    dest: /opt/artifactory
     copy: no
 
 - file:
-    path: /tmp/jfrog-artifactory-oss/install.sh
+    path: /opt/artifactory/artifactory-oss-4.7.0/bin/installService.sh
     state: touch
     mode: "u=+x"
 
-- command: /tmp/jfrog-artifactory-oss/install.sh
+- command: /opt/artifactory/artifactory-oss-4.7.0/bin/installService.sh
