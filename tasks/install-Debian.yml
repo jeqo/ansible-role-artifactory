@@ -3,5 +3,5 @@
 - apt_key: keyserver=pgpkeys.mit.edu/ id=6B219DCCD7639232
 
 - apt:
-  name: jfrog-artifactory-oss
-  state: present
+    name: jfrog-artifactory-oss
+    state: present
