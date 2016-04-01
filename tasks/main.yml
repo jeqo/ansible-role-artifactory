@@ -4,7 +4,7 @@
   become: yes
 
 - service:
-    name: httpd
+    name: artifactory
     state: started
     enabled: yes
   become: yes
