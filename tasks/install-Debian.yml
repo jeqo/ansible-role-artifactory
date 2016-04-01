@@ -27,6 +27,6 @@
 - file:
     path: /opt/artifactory/artifactory-oss-4.7.0/bin/installService.sh
     state: touch
-    mode: "u=+x"
+    mode: "u+x"
 
 - command: /opt/artifactory/artifactory-oss-4.7.0/bin/installService.sh
